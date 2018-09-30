@@ -1,0 +1,12 @@
+{
+  "name": "flow-workshop-intro",
+  "version": "1.0.0",
+  "description": "Simple example of Flow type checker usage",
+  "main": "src/index.js",
+  "repository": "git@github.com:AlexanderShushunov/flow-workshop.git",
+  "author": "Alexandr Shushunov <ashushunov@mail.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "1.14.3"
+  }
+}
