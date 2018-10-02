@@ -8,6 +8,10 @@
   "license": "MIT",
   "devDependencies": {
     "flow-bin": "^0.82.0",
+    "flow-remove-types": "^1.2.3",
     "prettier": "1.14.3"
+  },
+  "scripts": {
+    "build": "flow-remove-types src/ -d dist/"
   }
 }
