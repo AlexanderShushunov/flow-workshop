@@ -1,1 +1,7 @@
-export const includes = (arr, value) => true;
+// @flow
+export const includes = (
+  arr: Array<string>,
+  value: string | number
+) => {
+  return arr.includes(String(value));
+};
