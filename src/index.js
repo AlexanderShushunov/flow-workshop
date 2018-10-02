@@ -1,4 +1,5 @@
 // @flow
-const wordCount = str => str.split(' ').length;
+const wordCount = (str: string) =>
+  str.split(' ').length;
 
-console.log(wordCount(2));
+console.log(wordCount('Hi world'));
