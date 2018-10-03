@@ -6,7 +6,8 @@ import type {Snapshot} from './model';
 
 export const TicTacToe: {|
     initial: () => Snapshot,
-    next: (Snapshot, number, number) => Snapshot
+    next: (Snapshot, number, number) => Snapshot,
+    cheat: (Snapshot, number, number) => Snapshot
 |} = {
     initial: () => ({
         field: times(3, () => times(3, constant('empty'))),
@@ -41,6 +42,16 @@ export const TicTacToe: {|
             result: 'turn',
             player: changePlayer(snapshot)
         };
+    },
+    cheat: (snapshot, row, column) => {
+        if (snapshot.result !== 'turn') {
+            return snapshot;
+        }
+        return {
+            field: setCell(snapshot.field, row, column, 'empty'),
+            player: snapshot.player,
+            result: 'turn'
+        };
     }
 };
 
@@ -62,8 +73,12 @@ function possibleSelection({field}, row, column) {
 }
 
 function select({field, player}, row, column) {
+    return setCell(field, row, column, player);
+}
+
+function setCell(field, row, column, token) {
     const newField = cloneDeep(field);
-    newField[row][column] = player;
+    newField[row][column] = token;
     return newField;
 }
 
