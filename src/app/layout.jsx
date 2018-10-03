@@ -7,7 +7,7 @@ import {Info} from '../components/info';
 import type {Snapshot} from '../game';
 
 type LayoutProps = {
-    onResetClick: () => mixed,
+    onResetClick: () => mixed, // Function Types
     snapshot: Snapshot,
     isWinCell: (number, number) => boolean,
     onCellClick: (number, number) => mixed,
@@ -23,7 +23,7 @@ export const Layout =
          canReset
      }: LayoutProps) => (
         <div className="layout">
-            <ResetButton onClick={onResetClick} disable={!canReset}/>
+            <ResetButton onClick={onResetClick} disabled={!canReset}/>
             <div className="layout__field-container">
                 <Board
                     field={snapshot.field}
