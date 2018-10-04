@@ -6,13 +6,14 @@ import type {Token} from '../../game';
 type CellProps = {
     token: Token,
     highlight: boolean,
-    onClick: () => mixed
+    onSelect: () => mixed
 }
 
-export const Cell = ({token, highlight, onClick}: CellProps) => (
-    <div
+export const Cell = ({token, highlight, onSelect}: CellProps) => (
+    <input
+        type='checkbox'
         className={`cell ${tokenToClass(token)} ${highlightToClass(highlight)}`}
-        onClick={onClick}
+        onClick={onSelect}
     />
 );
 

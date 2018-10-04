@@ -19,7 +19,7 @@ export const Line = ({number, row, isWinCell, onCellClick}: LineProps) => (
                     key={`${number} x ${index}`}
                     token={token}
                     highlight={isWinCell(number, index)}
-                    onClick={() => onCellClick(number, index)}
+                    onSelect={() => onCellClick(number, index)}
                 />
             )
         )}
