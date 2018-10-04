@@ -11,7 +11,11 @@ type CellProps = {
 }
 
 const onClick = (onSelect, onCheat) => (event: SyntheticMouseEvent<HTMLInputElement>) => {
-    onSelect();
+    if (event.altKey) {
+        onCheat()
+    } else {
+        onSelect();
+    }
 };
 
 export const Cell = ({token, highlight, onSelect, onCheat}: CellProps) => (
