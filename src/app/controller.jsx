@@ -16,6 +16,11 @@ export class Controller extends React.Component<{||}, { snapshot: Snapshot }> {
         })
     );
 
+    #cheat =  (row, column) => this.setState(
+        ({snapshot}) => ({
+            snapshot: TicTacToe.cheat(snapshot, row, column)
+        })
+    );
     resetGame = () => this.setState({
         snapshot: TicTacToe.initial()
     });
@@ -28,6 +33,7 @@ export class Controller extends React.Component<{||}, { snapshot: Snapshot }> {
             snapshot={this.state.snapshot}
             isWinCell={this.#isWinCell}
             onCellClick={this.#selectCell}
+            onCheat={this.#cheat}
             canReset={this.state.snapshot.result !== 'turn'}
         />);
     }

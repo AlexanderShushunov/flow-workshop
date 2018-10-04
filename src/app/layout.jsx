@@ -11,6 +11,7 @@ type LayoutProps = {
     snapshot: Snapshot,
     isWinCell: (number, number) => boolean,
     onCellClick: (number, number) => mixed,
+    onCheat: (number, number) => mixed,
     canReset: boolean
 }
 
@@ -20,6 +21,7 @@ export const Layout =
          snapshot,
          isWinCell,
          onCellClick,
+         onCheat,
          canReset
      }: LayoutProps) => (
         <div className="layout">
@@ -28,6 +30,7 @@ export const Layout =
                 <Board
                     field={snapshot.field}
                     onCellClick={onCellClick}
+                    onCheat={onCheat}
                     isWinCell={isWinCell}
                 />
             </div>

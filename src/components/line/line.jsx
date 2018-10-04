@@ -8,10 +8,11 @@ type LineProps = {
     number: number,
     row: Row,
     isWinCell: (number, number) => boolean,
-    onCellClick: (number, number) => mixed
+    onCellClick: (number, number) => mixed,
+    onCheat: (number, number) => mixed
 }
 
-export const Line = ({number, row, isWinCell, onCellClick}: LineProps) => (
+export const Line = ({number, row, isWinCell, onCellClick, onCheat}: LineProps) => (
     <div className="row">
         {row.map(
             (token, index) => (
@@ -20,6 +21,7 @@ export const Line = ({number, row, isWinCell, onCellClick}: LineProps) => (
                     token={token}
                     highlight={isWinCell(number, index)}
                     onSelect={() => onCellClick(number, index)}
+                    onCheat={() => onCheat(number, index)}
                 />
             )
         )}

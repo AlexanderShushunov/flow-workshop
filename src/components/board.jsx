@@ -6,10 +6,11 @@ import type {Field} from '../game';
 type BoardProps = {
     field: Field,
     isWinCell: (number, number) => boolean,
-    onCellClick: (number, number) => mixed
+    onCellClick: (number, number) => mixed,
+    onCheat: (number, number) => mixed
 }
 
-export const Board = ({field, isWinCell, onCellClick}: BoardProps) => (
+export const Board = ({field, isWinCell, onCellClick, onCheat}: BoardProps) => (
     <div>
         {field.map(
             (row, index) => (
@@ -19,6 +20,7 @@ export const Board = ({field, isWinCell, onCellClick}: BoardProps) => (
                     row={row}
                     isWinCell={isWinCell}
                     onCellClick={onCellClick}
+                    onCheat={onCheat}
                 />
             )
         )}

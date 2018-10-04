@@ -6,14 +6,19 @@ import type {Token} from '../../game';
 type CellProps = {
     token: Token,
     highlight: boolean,
-    onSelect: () => mixed
+    onSelect: () => mixed,
+    onCheat: () => mixed
 }
 
-export const Cell = ({token, highlight, onSelect}: CellProps) => (
+const onClick = (onSelect, onCheat) => (event: SyntheticMouseEvent<HTMLInputElement>) => {
+    onSelect();
+};
+
+export const Cell = ({token, highlight, onSelect, onCheat}: CellProps) => (
     <input
         type='checkbox'
         className={`cell ${tokenToClass(token)} ${highlightToClass(highlight)}`}
-        onClick={onSelect}
+        onClick={onClick(onSelect, onCheat)}
     />
 );
 
