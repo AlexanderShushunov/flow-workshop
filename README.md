@@ -2,6 +2,8 @@
 
 Материалы для мастер-класса "Типизируй это" на [FrontendConf 2018](http://frontendconf.ru/moscow/2018/abstracts/3774)
 
+[Слайды](https://drive.google.com/open?id=1JDESNdIC7CefwB7hBd8ns0Z8AEzPdXxM)
+
 ## Необходимое ПО
 1. [git](https://git-scm.com/)
 2. [Node.js](https://nodejs.org/en/) >= 8  
